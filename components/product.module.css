@@ -1,0 +1,29 @@
+.productContainer {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.product {
+    display: flex;
+    
+    align-items: center;
+    height: 1.3rem;
+    gap: 10px;
+
+    background-color: #777;
+    color: #ccc;
+    
+
+}
+
+.product p {
+    text-align: start;
+}
+
+.total{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
