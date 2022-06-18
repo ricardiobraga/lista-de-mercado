@@ -1,24 +1,47 @@
 .productContainer {
     display: flex;
-    justify-content: space-between;
-    
-}
-.product {
-    display: flex;
-    
     align-items: center;
-    height: 1.3rem;
-    gap: 10px;
 
-    background-color: #777;
-    color: #ccc;
+    border-bottom: 1px solid #232222;
     
+    
+}
+
+
+.productCheckBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20%;
+    height: 40px;
 
 }
 
-.product p {
-    text-align: start;
+.productName {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    gap: 10px;
+    font-size: 1rem;
 }
+.productSelected {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    gap: 10px;
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #575757;;
+}
+
+.productName p {
+    margin: 0;
+}
+
+
 
 .total{
     width: 100%;

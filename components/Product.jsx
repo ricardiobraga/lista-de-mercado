@@ -3,44 +3,38 @@ import React, {useState} from 'react';
 import styles from './product.module.css';
 
 export default function Product(props){
+    
+    const [styleControll, setStyleControll] = useState(styles.productName)
+    
 
-    function totalValue(){
-        let price = parseFloat(props.price)
+    function updateCheckBox(param){
+         if (param){
+            setStyleControll(styles.productSelected)
+         } else if (!param){
+            setStyleControll(styles.productName)
+         }     
         
-        return price * props.qtt
+    }
+
+    function sendInfo(){
+        props.setProductInfo(props.id)
+        props.setEditPost(true)
     }
 
 
 
     return(
-        // product name, quantidade, preco
-        
+        // product name, quantidade, preco  
         
         <div className={styles.productContainer}>
             
-            <div className={styles.product}>
-                <input type="checkbox" name="" id="" />
+            <div className={styles.productCheckBox}>
+                <input type="checkbox"  onChange={(e) => updateCheckBox(e.target.checked)} />
             </div>
 
-            <div className={styles.product}>
-                <p>Produto:</p>
+            <div className={styleControll} onClick={() => sendInfo()}>
                 <span>{props.name}</span>
-            </div>
-
-            <div className={styles.product}>
-                <p>Quandidade:</p>
-                <span>{props.qtt}</span>
-            </div>
-
-            <div className={styles.product}>
-                <p>Preço:</p>
-                <span>R$ {props.price}</span>
-            </div>
-
-            <div className={styles.product}>
-                <p>Total:</p>
-                <span>R$ {totalValue()}</span>
-            </div>
+            </div>           
         
         </div>
 

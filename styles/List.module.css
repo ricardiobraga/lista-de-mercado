@@ -1,0 +1,115 @@
+.copyTag {
+
+
+    position: absolute;
+    top: 0;
+    left: 49%;
+    transition: top .5s;
+
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 15px;
+    border-radius: 0 0 5px 5px;
+    color: #444343;
+    background-color: #19e47d;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    
+}
+
+.copyTagHide {
+    position: fixed;
+    top: -35px;
+    left: 49%;
+    transition: top .5s;
+
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 15px;
+    border-radius: 0 0 5px 5px;
+    color: #444343;
+    background-color: #19e47d;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    color: #a4a4a4;
+}
+.listMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 100%;
+     
+    
+    background-image: linear-gradient(#232222, #444343, #232222);
+  }
+
+.header { 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 500px;
+      height: 100px;
+
+      border-bottom: 1px solid #232222;
+  }
+
+  .imgLogo {
+      margin-left: 30px;
+      width: 50px;  
+    }
+
+.listCode {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    font-size: 1.5rem;
+    gap: 10px;
+}
+
+.copyIcon{
+    font-size: 1.3rem;
+
+}
+.listaDeProdutos {
+    width: 500px;
+    height: 100%;
+    
+}
+
+.btnNewProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #444343;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+
+    cursor: pointer;
+    
+}
+.btnNewProduct:active{
+    color: #19e47d;
+}
+
+
+
