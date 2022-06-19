@@ -49,13 +49,33 @@ export default function Home() {
         return [...prev, post];
       });
     });
+
+    autoLoadUpdate((post) => {
+      
+      setPosts((prev) => {
+        prev.map( (item) => {
+          if(post.id === item.id){
+            return (item.name = post.name, item.price = post.price, item.qtt = post.qtt) 
+            
+            
+            
+          }
+          //post.id === item.id ? item.id = post.id : item
+        } )
+        console.log(post);           
+        return [...prev]
+        
+        
+      });
+    });
+    
   }, []);
 
 
 
 
 
-  async function fetchPost(callback) {
+  async function fetchPost() {
     const { data, error } = await supabaseClient
       .from("produtos")
       .select()
@@ -63,13 +83,21 @@ export default function Home() {
       .eq("listname", localStorage.getItem("listname"));
     setPosts(data);
     console.log("error:", error);
-    //callback(id)
+    
   }
 
   function autoLoad(callBack) {
     return supabaseClient
       .from("produtos")
-      .on("INSERT" , (res) => {
+      .on("INSERT"  , (res) => {
+        callBack(res.new);
+      })
+      .subscribe();
+  }
+  function autoLoadUpdate(callBack) {
+    return supabaseClient
+      .from("produtos")
+      .on("UPDATE"   , (res) => {
         callBack(res.new);
       })
       .subscribe();
@@ -149,9 +177,7 @@ export default function Home() {
         <div className={styles.btnNewProduct}>
           <a onClick={() => setHide(true)}> + </a>
         </div>
-      </main>
-
-      
+      </main>      
     </div>
   );
 }

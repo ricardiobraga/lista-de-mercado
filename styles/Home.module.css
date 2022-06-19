@@ -1,10 +1,10 @@
 
 .indexMain {
-  width: 100vw;
-  height: 100vh;  
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;  
 }
 
 .formAcesso {
@@ -75,8 +75,4 @@
 
 
 
-@media (max-width: 600px) {
-  .formAcesso {
-    width: 100vw;
-  }
-}
+

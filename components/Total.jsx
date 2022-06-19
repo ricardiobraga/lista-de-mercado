@@ -22,8 +22,7 @@ export default function Total(props){
         
            <div className={styles.total}>
                 Total: R$ {totalValue(props.products).toFixed(2)}
-           </div>
-        
+           </div>    
         
 
 

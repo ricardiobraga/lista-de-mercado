@@ -14,11 +14,11 @@ export default function EditProduct(props){
 
 
         
-   async function editProduct(name) {
+   async function editProduct(name, qtt, price) {
 
     const { data, error } = await supabaseClient
   .from('produtos')
-  .update({ name: name })
+  .update({ name: name , qtt: qtt, price: price })
   .eq('id', props.productInfo)
   props.fetchPost(localStorage.getItem("listname"));
   props.setEditPost(false);
@@ -27,6 +27,9 @@ export default function EditProduct(props){
 
 
    }
+
+
+   
 
     return(
         <div className={props.hide ? styles.bg : styles.hide}>
@@ -49,7 +52,7 @@ export default function EditProduct(props){
                 </div>
                 <div className={styles.product}>
                     <br />
-                    <a className={homeStyles.btn} onClick={() =>editProduct(name)}>Atualizar</a>
+                    <a className={homeStyles.btn} onClick={() =>editProduct(name, qtt, price)}>Atualizar</a>
                 </div>
             
             </div>
