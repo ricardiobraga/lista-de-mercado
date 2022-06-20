@@ -29,16 +29,7 @@ export default function NewProduct(props){
                     <p>Produto:</p>
                     <input type="text" value={name} onChange={ e => setPost({ ...post, name: e.target.value})} placeholder="Nome do Produto" />
                 </div>
-
-                <div className={styles.product}>
-                    <p>Quandidade:</p>
-                    <input type="text" value={qtt} onChange={ e => setPost({ ...post, qtt: e.target.value})} placeholder="Nome do Produto" />
-                </div>
-
-                <div className={styles.product}>
-                    <p>Preço:</p>
-                    <input type="text" value={price} onChange={ e => setPost({ ...post, price: e.target.value})} placeholder="0,00" />
-                </div>
+                <br />
                 <div className={styles.product}>
                     <a className={homeStyles.btn} onClick={() =>postProduct()}>cadastrar</a>
                 </div>
