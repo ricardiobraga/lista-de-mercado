@@ -7,27 +7,20 @@ import { supabaseClient } from '../client.js'
 
 export default function EditProduct(props){
     
-    const [post, setPost] = useState({name: "", qtt: 0, price: 0});  
+    const [post, setPost] = useState({name: ""});  
     const { name, qtt, price} = post; 
     
     
 
 
         
-//    async function editProduct(name, qtt, price) {
+   function editAndSetProduct(name, qtt, price) {   
 
-//     const { data, error } = await supabaseClient
-//         .from('produtos')
-//         .update({ name: name , qtt: qtt, price: price })
-//         .eq('id', props.productInfo)
-        
-//         props.setEditPost(false);
-//         props.fetchPost(localStorage.getItem("listname"));
-        
-//         setPost({name: "", qtt: 0, price: 0})
+        props.editProduct(name)
+        setPost({name: ""})
 
 
-//    }
+   }
 
 
    
@@ -45,7 +38,7 @@ export default function EditProduct(props){
                 
                 <div className={styles.product}>
                     <br />
-                    <a className={homeStyles.btn} onClick={() => props.editProduct(name)}>Atualizar</a>
+                    <a className={homeStyles.btn} onClick={() => editAndSetProduct(name)}>Atualizar</a>
                 </div>
             
             </div>
