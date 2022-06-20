@@ -42,9 +42,13 @@ export default function Home() {
   
 
   useEffect(() => {
-    fetchPost(localStorage.getItem("listname") || 123);
+    fetchPost(localStorage.getItem("listname") || 123);  
+
+    
+    
 
     autoLoad((post) => {
+      
       setPosts((prev) => {
         return [...prev, post];
       });
@@ -60,16 +64,20 @@ export default function Home() {
             
             
           }
-          //post.id === item.id ? item.id = post.id : item
-        } )
-        console.log(post);           
-        return [...prev]
+          
+        } )                  
+        return [...prev];
         
         
       });
     });
     
-  }, []);
+  }, [posts]);
+
+
+  
+
+ 
 
 
 
@@ -81,7 +89,7 @@ export default function Home() {
       .select()
       .order("id", { ascending: true })
       .eq("listname", localStorage.getItem("listname"));
-    setPosts(data);
+      setPosts(data);
     console.log("error:", error);
     
   }
@@ -89,18 +97,19 @@ export default function Home() {
   function autoLoad(callBack) {
     return supabaseClient
       .from("produtos")
-      .on("INSERT"  , (res) => {
+      .on("*" , (res) => {
         callBack(res.new);
       })
       .subscribe();
-  }
-  function autoLoadUpdate(callBack) {
-    return supabaseClient
+    }
+    function autoLoadUpdate(callback) {
+      return supabaseClient
       .from("produtos")
-      .on("UPDATE"   , (res) => {
-        callBack(res.new);
+      .on("UPDATE"  , (res) => {
+        callback(res.new);       
       })
       .subscribe();
+      
   }
 
   async function createPost(name, qtt, price) {
@@ -171,11 +180,11 @@ export default function Home() {
 
         <div className={styles.listaDeProdutos}>{renderProducts(posts)}</div>
 
-        <NewProduct createPost={createPost} hide={hide} setHide={setHide} />
-        <EditProduct createPost={createPost} hide={editPost} setEditPost={setEditPost} posts={posts} setPosts={setPosts} fetchPost={fetchPost} productInfo={productInfo}  />
+        <NewProduct createPost={createPost} hide={hide} setHide={setHide}/>
+        <EditProduct createPost={createPost} hide={editPost} setEditPost={setEditPost} posts={posts} setPosts={setPosts} fetchPost={fetchPost} productInfo={productInfo} autoLoadUpdate={autoLoadUpdate}  />
         <Total products={posts} />
-        <div className={styles.btnNewProduct}>
-          <a onClick={() => setHide(true)}> + </a>
+        <div className={styles.btnNewProduct} onClick={() => setHide(true)}>
+          <a > + </a>
         </div>
       </main>      
     </div>

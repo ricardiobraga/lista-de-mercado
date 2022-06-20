@@ -13,7 +13,8 @@ export default function NewProduct(props){
 
     function postProduct(){
         props.createPost(post.name, post.qtt, post.price); 
-            
+        props.setHide(false)  
+        
         setPost({name: "", qtt: 0, price: 0});    }
 
         

@@ -17,13 +17,14 @@ export default function EditProduct(props){
    async function editProduct(name, qtt, price) {
 
     const { data, error } = await supabaseClient
-  .from('produtos')
-  .update({ name: name , qtt: qtt, price: price })
-  .eq('id', props.productInfo)
-  props.fetchPost(localStorage.getItem("listname"));
-  props.setEditPost(false);
-  console.log(props.productInfo);
-  setPost({name: "", qtt: 0, price: 0})
+        .from('produtos')
+        .update({ name: name , qtt: qtt, price: price })
+        .eq('id', props.productInfo)
+        
+        props.setEditPost(false);
+        props.fetchPost(localStorage.getItem("listname"));
+        
+        setPost({name: "", qtt: 0, price: 0})
 
 
    }

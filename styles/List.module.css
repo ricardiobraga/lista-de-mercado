@@ -88,6 +88,9 @@
 
 }
 .listaDeProdutos {
+    
+    overflow-y: auto;
+    
     width: 500px;
     height: 100%;
     
@@ -107,6 +110,7 @@
     cursor: pointer;
     
 }
+
 .btnNewProduct:active{
     color: #19e47d;
 }
@@ -127,6 +131,10 @@
         width: auto;
         height:100;
          
+  }
+
+  .listaDeProdutos {
+    width: 100%;
   }
 }
   
