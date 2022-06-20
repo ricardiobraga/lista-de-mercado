@@ -12,11 +12,11 @@ import styles from "../styles/List.module.css";
 import { supabaseClient } from "../client.js";
 import Total from "../components/Total";
 
-import { useRouter } from "next/router";
-
 import Image from "next/image";
 import logo from "../public/logo.png";
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
+
+import router, { useRouter } from 'next/router'
 
 
 export default function Home() {
@@ -166,7 +166,7 @@ export default function Home() {
             copied
           </div>
 
-          <div className={styles.imgLogo}>
+          <div className={styles.imgLogo} onClick={() => router.push("/")}>
             <Image
               src={logo}
               alt="Logo do App Lista de Mercado"

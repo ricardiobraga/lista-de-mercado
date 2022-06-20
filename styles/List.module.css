@@ -70,7 +70,8 @@
 
   .imgLogo {
       margin-left: 30px;
-      width: 50px;  
+      width: 50px; 
+      cursor: pointer; 
     }
 
 .listCode {
