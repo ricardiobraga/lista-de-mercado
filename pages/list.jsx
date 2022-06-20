@@ -27,8 +27,7 @@ export default function Home() {
   const [isCopied, setIsCopied] = useState(false);
   const [post, setPost] = useState({
     name: "",
-    qtt: 0,
-    price: 0,
+    checkbox: false,    
     listname: 0,
   });
 
@@ -59,8 +58,7 @@ export default function Home() {
       setPosts((prev) => {
         prev.map( (item) => {
           if(post.id === item.id){
-            return (item.name = post.name, item.price = post.price, item.qtt = post.qtt) 
-            
+            return (item.name = post.name, item.checkbox = post.checkbox)             
             
             
           }
@@ -112,28 +110,54 @@ export default function Home() {
       
   }
 
-  async function createPost(name, qtt, price) {
+  async function createPost(name, checkbox) {
     await supabaseClient
       .from("produtos")
       .insert([
-        { name, qtt, price, listname: localStorage.getItem("listname") },
+        { name, checkbox, listname: localStorage.getItem("listname") },
       ])
       .single();
-    setPost({ name: "", qtt: 0, price: 0, listname: 0 });
+    setPost({ name: "", checkbox: false, listname: 0 });
     fetchPost();
+  }
+
+  async function editProduct(name, checkbox) {
+
+    const { data, error } = await supabaseClient
+        .from('produtos')
+        .update({ name: name, checkbox: checkbox  })
+        .eq('id', productInfo)
+        
+        setEditPost(false);        
+        
+        setPost({name: "", checkbox: checkbox})
+
+   }
+
+  async function deletePost(id){
+    const { data, error } = await supabaseClient
+    .from('produtos')
+    .delete()
+    .eq('id', id)
   }
 
   function renderProducts(array) {
     return array.map((item, i) => {
       return (
-        <Product key={i} id={item.id} name={item.name} qtt={item.qtt} price={item.price} setEditPost={setEditPost} setProductInfo={SetProductInfo} />        
+        <Product key={i}
+                 id={item.id}
+                 name={item.name}
+                 checkbox={item.checkbox}                 
+                 setEditPost={setEditPost}
+                 setProductInfo={SetProductInfo}
+                 deletePost={deletePost}
+                 editProduct={editProduct}
+                 />        
       );
     });
   }
 
-  function setLocalStorage(id) {
-    localStorage.setItem("listname", id);
-  }
+
   
   async  function copyText(param, callback){
     try{
@@ -181,8 +205,8 @@ export default function Home() {
         <div className={styles.listaDeProdutos}>{renderProducts(posts)}</div>
 
         <NewProduct createPost={createPost} hide={hide} setHide={setHide}/>
-        <EditProduct createPost={createPost} hide={editPost} setEditPost={setEditPost} posts={posts} setPosts={setPosts} fetchPost={fetchPost} productInfo={productInfo} autoLoadUpdate={autoLoadUpdate}  />
-        <Total products={posts} />
+        <EditProduct createPost={createPost} hide={editPost} setEditPost={setEditPost} posts={posts} setPosts={setPosts} fetchPost={fetchPost} productInfo={productInfo} autoLoadUpdate={autoLoadUpdate} editProduct={editProduct}  />
+        {/* <Total products={posts} /> */}
         <div className={styles.btnNewProduct} onClick={() => setHide(true)}>
           <a > + </a>
         </div>
