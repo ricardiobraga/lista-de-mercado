@@ -12,6 +12,7 @@ import Image from 'next/image'
 import logo from '../public/logo.png'
 
 import { supabaseClient } from "../client.js";
+import IconDoubt from "../components/DoubtIcon";
 
 export default function Home() {
   const [listName, setListName] = useState("");
@@ -94,7 +95,10 @@ function setLocalStorage(listname){
             </div>
             
             <div className={styles.acessarLista}>
-              <input type="number" className={styles.inputAcesso} value={listName} placeholder='código da lista' onChange={e => setListName(e.target.value)} />
+             <div className={styles.inputDiv}>
+                <input type="number" className={styles.inputAcesso} value={listName} placeholder='código da lista' onChange={e => setListName(e.target.value)} />
+                <IconDoubt />
+             </div>
               <a className={styles.btn} onClick={() =>checkList(setLocalStorage)}>Acessar Lista</a>
             </div>
               <hr className={styles.hr} color="#232222" width="80%" size="1"/>                           

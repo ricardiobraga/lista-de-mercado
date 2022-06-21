@@ -40,15 +40,65 @@
 .hr {
   margin: 20px 0;
 }
+.inputDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 40px;
+  
+  background-color: #fff;
+  border-radius: 50px;
+  border-bottom: 3px solid #232222;
+}
 
 .inputAcesso {
   text-align: center;
-  width: 250px;
-  height: 40px;
+  
   border-radius: 50px;
   border: none;
-  border-bottom: 3px solid #232222;
+  
 }
+
+.doubtIcon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #232222;
+
+  cursor: pointer;
+}
+
+.doubtIconSquare{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8px;
+  width: 150px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #232222;
+  font-size: .7rem;
+  margin-bottom: 110px;
+  cursor: pointer;
+  
+}
+
+.hide{
+  display: none;
+  visibility: hidden;
+  
+}
+
+
+
+
 
 .btn {
   display: flex;
