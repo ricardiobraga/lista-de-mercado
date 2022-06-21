@@ -1,4 +1,18 @@
-## Lista de Mercado
+# Lista de Mercado
+<p align="center">
+<img src="./public/preview.gif" alt="Preview da aplicação funcionando" width="600" align="center">
+</p>
+
+<br>
+
+
+Desde janeiro quando participei da quarta Imersão React da Alura todas as vezes que fui ao mercado ficava pensando em desenvolver essa aplicação para estudo.
+
+A ideia é uma lista de compras que é atualizada em tempo real, assim minha esposa poderia ir acrescentando os itens necessários enquanto eu fazia as compras e vice versa.
+
+Para o meu aprendizado o que funciona muito é a partir de algum conteúdo que aprendo desenvolver algo novo aplicando o que estudei mas de forma diferente. Me ajuda bastante a assimilar e ver possibilidades diferentes utilizando o conhecimento que já tenho.
+
+Nesse projeto utilizei NextJs para o frontend e o Supabase para o backend,  quebrei bastante a cabeça, mas fiquei feliz com o resultado.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
