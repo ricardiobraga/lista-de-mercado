@@ -32,12 +32,11 @@ export default function EditProduct(props){
                 <h1 className={styles.titulo}>Editar produto</h1>
                 <div className={styles.product}>
                     <p>Produto:</p>
-                    <input type="text" value={name} onChange={ e => setPost({ ...post, name: e.target.value})} placeholder="Nome do Produto" />
+                    <input className={styles.inputForm} type="text" value={name} onChange={ e => setPost({ ...post, name: e.target.value})} placeholder="Nome do Produto" />
                 </div>
 
                 
-                <div className={styles.product}>
-                    <br />
+                <div className={styles.product}>                    
                     <a className={homeStyles.btn} onClick={() => editAndSetProduct(name)}>Atualizar</a>
                 </div>
             

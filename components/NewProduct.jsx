@@ -25,12 +25,12 @@ export default function NewProduct(props){
             <div className={styles.productContainer}>
                 
                 <a className={styles.btnClose} onClick={() => props.setHide(false)}>X</a>
+                
                 <div className={styles.product}>
                     <p>Produto:</p>
-                    <input type="text" value={name} onChange={ e => setPost({ ...post, name: e.target.value})} placeholder="Nome do Produto" />
-                </div>
-                <br />
-                <div className={styles.product}>
+                    <input className={styles.inputForm} type="text" value={name} onChange={ e => setPost({ ...post, name: e.target.value})} placeholder="Nome do Produto" />
+                </div>                
+                    <div className={styles.product}>
                     <a className={homeStyles.btn} onClick={() =>postProduct()}>cadastrar</a>
                 </div>
             
