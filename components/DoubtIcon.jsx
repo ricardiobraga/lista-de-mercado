@@ -26,7 +26,7 @@ export default function IconDoubt(){
                     >?
                 </span>
                 <span className={stylesChange}>
-                    Se não tiver um número de acesso você pode criar uma nova
+                    Se não tiver um número de acesso você pode criar uma nova lista
                 </span>
             </div> 
 
