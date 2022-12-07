@@ -14,6 +14,9 @@ Para o meu aprendizado o que funciona muito é a partir de algum conteúdo que a
 
 Nesse projeto utilizei NextJs para o frontend e o Supabase para o backend,  quebrei bastante a cabeça, mas fiquei feliz com o resultado.
 
+Para acessar o projeto [clique aqui](https://lista-de-mercado.vercel.app/)
+**Como o projeto está hospetado de forma gratuita no supabase é possível que ele entre em standby e fique fora do ar
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
