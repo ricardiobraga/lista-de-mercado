@@ -16,6 +16,7 @@ import IconDoubt from "../components/DoubtIcon";
 
 export default function Home() {
   const [listName, setListName] = useState("");
+  const [btnHide, setBtnHide] = useState(false);
   //const [ randomKey, setRandomKey ] = useState(0)
   
   async function teste(randomKey) {    
@@ -96,10 +97,15 @@ function setLocalStorage(listname){
             
             <div className={styles.acessarLista}>
              <div className={styles.inputDiv}>
-                <input type="number" className={styles.inputAcesso} value={listName} placeholder='código da lista' onChange={e => setListName(e.target.value)} />
+                <input type="number" className={styles.inputAcesso} value={listName} placeholder='código da lista' onChange={e => {
+                  e.target.value.length > 0 ? setBtnHide(true) : setBtnHide(false);                  
+                  setListName(e.target.value);
+                }
+                  
+                  } />
                 <IconDoubt />
              </div>
-              <a className={styles.btn} onClick={() =>checkList(setLocalStorage)}>Acessar Lista</a>
+              <a className={btnHide ? styles.btn : styles.btnHide} onClick={() =>checkList(setLocalStorage)}>Acessar Lista</a>
             </div>
               <hr className={styles.hr} color="#232222" width="80%" size="1"/>                           
               <a className={styles.btn} onClick={() => fetchPost(teste)}>Criar Lista</a>
