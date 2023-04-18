@@ -5,21 +5,30 @@
 
 <br>
 
+# SOBRE
 
 Desde janeiro quando participei da quarta Imersão React da Alura todas as vezes que fui ao mercado ficava pensando em desenvolver essa aplicação para estudo.
 
-A ideia é uma lista de compras que é atualizada em tempo real, assim minha esposa poderia ir acrescentando os itens necessários enquanto eu fazia as compras e vice versa.
+A ideia é uma lista de compras que é atualizada em tempo real.
 
 Para o meu aprendizado o que funciona muito é a partir de algum conteúdo que aprendo desenvolver algo novo aplicando o que estudei mas de forma diferente. Me ajuda bastante a assimilar e ver possibilidades diferentes utilizando o conhecimento que já tenho.
-
-Nesse projeto utilizei NextJs para o frontend e o Supabase para o backend,  quebrei bastante a cabeça, mas fiquei feliz com o resultado.
 
 Para acessar o projeto [clique aqui](https://lista-de-mercado.vercel.app/)
 **Como o projeto está hospetado de forma gratuita no supabase é possível que ele entre em standby e fique fora do ar
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TECNOLOGIAS
 
-## Getting Started
+## Frontend
+
+- NextJS
+- ReactJs
+
+## Backend
+
+- Supabase
+
+
+# Getting Started
 
 First, run the development server:
 
