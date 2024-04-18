@@ -7,14 +7,11 @@
 
 # SOBRE
 
-Desde janeiro quando participei da quarta Imersão React da Alura todas as vezes que fui ao mercado ficava pensando em desenvolver essa aplicação para estudo.
-
-A ideia é uma lista de compras que é atualizada em tempo real.
-
-Para o meu aprendizado o que funciona muito é a partir de algum conteúdo que aprendo desenvolver algo novo aplicando o que estudei mas de forma diferente. Me ajuda bastante a assimilar e ver possibilidades diferentes utilizando o conhecimento que já tenho.
+Projeto feito para estudo, uma lista de compras que é atualizada em tempo real.
+Essa aplicação permite que através de um código único múltiplos usuários acessem e editem uma lista que é atualizada em tempo real.
 
 Para acessar o projeto [clique aqui](https://lista-de-mercado.vercel.app/)
-**Como o projeto está hospetado de forma gratuita no supabase é possível que ele entre em standby e fique fora do ar
+**Como o projeto está hospetado de forma gratuita no Supabase é possível que ele entre em standby e fique fora do ar
 
 # TECNOLOGIAS
 
@@ -26,7 +23,7 @@ Para acessar o projeto [clique aqui](https://lista-de-mercado.vercel.app/)
 ## Backend
 
 - Supabase
-
+- 
 
 # Getting Started
 
